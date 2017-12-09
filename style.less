@@ -1,0 +1,330 @@
+html {
+	margin: 0;
+	padding: 0;
+	width: 100% ;
+	height: 100% ;
+}
+
+.flexcolumn{display: flex; flex-flow: column wrap;}
+.flexrow{display: flex; flex-flow: row wrap;}
+@fontcolor: black;/*main font*/
+
+body {
+	.flexcolumn;
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	font-family: 'Roboto', sans-serif;
+}
+/* style for header*/
+.header__top {
+	.flexrow;
+	justify-content: space-between;
+	background-color: black;
+	font-size: 20px;
+	&-reg a{ display: flex;
+			align-items: center;
+	}
+	&-left { margin: 5px;
+			 & a:first-child {color: lighten(@fontcolor, 100%); }
+	}
+	&-right {.flexrow;
+			margin: 5px;
+			& img { width: 19px;
+					height: 19px;
+					background: black;
+				}
+	}
+	a { color: lighten(@fontcolor, 75%);
+		text-decoration: none;
+		font-size: 13px;
+		font-weight: bold;
+		text-align: center;
+		margin: 0 5px 0 5px;
+		&:hover {border-bottom: 1px dashed lighten(@fontcolor, 100%);
+				color: lighten(@fontcolor, 100%)
+		}
+	   }
+}
+
+.header__down {
+	.flexrow;
+	justify-content: space-around;	
+	align-items: flex-end;
+	margin: 0;
+	padding: 0;
+	/*padding-bottom: 10px;*/ 
+	background: lighten(@fontcolor, 50%);
+}
+
+.header__down_logo {
+	& img {width: 180px;}
+}
+
+.header__down_list {
+	.flexrow;
+	justify-content: space-between;	
+	align-items: flex-end;
+	list-style: none;
+	margin: 0;
+	line-height: 34px;
+	height: 100%;
+	flex:1;
+		& li {
+			
+			margin-left: 10px;
+		}
+		& li:hover {border-bottom: 2px solid #ffcc00;}
+		& a {
+			text-decoration: none;
+			color: white;
+		}
+		& a:hover {color: #ffcc00;}
+}
+
+.header__down_advert {
+	padding: 10px 0 0 0;
+
+	& img {width: 200px;
+		height: auto;
+			}
+}
+
+.header__down_list3 {
+	.flexrow;
+	justify-content: space-between;	
+	flex-wrap: nowrap;
+	& a{color: #ff8627;}
+}
+.header__down_list8 {
+	width: 90px;
+	height: 40px;
+	display: block;
+	background-image: url("image/Absolut-Logo1.png");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	&:hover {
+	background-image: url("image/Absolut-Logo.png");
+}
+}
+
+/*style for sidebar*/
+
+main {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.sidebar {
+	order: 2;
+	flex: 1 2 250px;
+	max-width: 250px;
+
+}
+
+.sidebar__content {
+	display: flex;
+	flex-flow: column;
+	padding: 15px;
+	background: lighten(@fontcolor, 80%);
+	border-bottom: 1px solid lighten(@fontcolor, 70%);
+		& img{
+			width: 225px;
+			height: 150px;
+		}
+		&_text {
+			width: 100%;
+			color: @fontcolor;
+			font-size: 15px;
+			font-weight: bold;
+			margin: 10px 0 10px 0;
+		}
+		&_text1 {
+			color: lighten(@fontcolor, 50%);
+			font-size: 11px;
+		}
+		& a{
+			text-decoration: none;
+		}
+		&:hover {background: lighten(@fontcolor, 90%);}
+}
+/*         style for main content*/
+.page {
+	.flexcolumn;
+	margin: 20px;
+	order: 1;
+	flex:	3 1 740px;
+	max-width: 976px;
+	
+	& a{text-decoration: none;}
+}
+
+.pag {
+	border: 1px solid lighten(@fontcolor, 80%);
+
+}
+
+.topPage {
+	.flexcolumn;
+	justify-content: space-around;
+	align-items: flex-start;
+	margin: 20px;
+}
+
+.topPage__topNews {
+	.flexrow;
+	/*justify-content: space-around;*/
+	align-items: flex-start;
+	padding: 10px 0 15px 0;
+	& a{color: blue;}
+	&_nav{
+		color: blue;
+		font-size: 12px;}
+	&_action {.flexrow;
+		flex-wrap: nowrap;
+		align-items: flex-start;
+		width: 100%;
+		padding: 20px 0 40px 0;
+		&_text{ 
+			font-weight: bold;
+			font-size: 20px;
+			width: 70%;
+		}
+		&_date{
+			width: 90px; 
+			height: 20px; 
+			background: red; 
+			color:white;
+			border-radius: 5px 5px;
+			text-align: center;}
+		&_script{align-self: center;}
+	}
+}
+.topPage__topNews_details {
+	& img{width: 450px; }
+	.flexrow;
+	&_img{min-width: 49%;}
+	&_news{
+		max-width: 45%;
+		min-width: 40%;
+		align-self: flex-start;
+		padding-left: 10px;}
+	&_text{
+		padding-bottom: 20px;
+		font-size: 14px;}
+	&_number{
+		.flexrow;
+		align-items: baseline;
+		font-size: 14px;}
+	&_phone{
+		width: 150px;
+		text-align: center;
+		line-height: 30px;
+		font-weight: bold;
+		margin-left: 10px;
+		background: #4dc710e8;
+		color: white;
+		border-radius: 5px;
+	}
+
+}
+
+.downPage {
+	.flexcolumn;
+	justify-content: space-around;
+	align-items: flex-start;
+	margin: 20px;
+	border-top: 1px solid lighten(@fontcolor, 80%);
+}
+
+h1 {
+	font-size: 18px;
+	margin-bottom: 30px;
+}
+
+.downPage__action {
+	.flexrow;
+	padding-bottom: 20px;
+	& img {width: 300px; height: 170px;}
+	&_img{min-width: 34%;}
+	&_text{min-width: 38%; max-width: 40%;}
+	&_text1{
+		font-weight: bold;
+		& a {color: lighten(@fontcolor, 20%);}}
+	&_text2{
+		font-size: 13px;
+		color: lighten(@fontcolor, 40%);}
+	&_script{min-width: 25%; align-self: center;}
+}
+
+.action {
+	margin: 20px;
+}
+
+h2 {
+	font-size: 17px;
+	margin-bottom: 30px;
+}
+
+.action__list {
+	.flexrow;
+	justify-content: space-around;
+	align-items: flex-start;
+	margin: 0;
+	width: 100%;
+}
+
+@media(min-width:900px){.action__item {
+	flexgrow: 1;
+	width: 30%;
+	.flexcolumn;max-height: 450px;}}
+
+.action__item {
+	min-height: 350px;
+	margin: 0 15px 20px 0;
+	border: 2px solid lighten(@fontcolor, 85%);
+	&:hover{box-shadow: 2px 5px 4px 4px lighten(@fontcolor, 70%);}
+	&_img{width: 100%;}
+	& img {width: 100%; height: 160px;}
+	&_text { font-size: 17px;
+			font-weight: bold;
+			width: 90%;
+			padding-left: 15px;}
+	&_day {
+			width: 35%;
+			margin-left: 15px;
+			line-height: 20px;
+			font-size: 10px;
+			text-align: center;
+			border-radius: 5px;
+			background: red;
+			color: lighten(@fontcolor, 100%);;
+	}
+} 
+
+/*style for jquery headsive plugin*/
+.headhesive{
+	background: white;
+	position: fixed;
+	width: 100%;
+	/*transform: translateY(-100%);*/
+	opacity: 1;
+	z-index: 1;
+}
+
+.headhesive--stick{
+	/*transform: translateY(0);*/
+	height: 5px;
+	width: 100%;
+	background: rgb(223, 223, 223);
+	transition: 2s;
+	outline-offset: 60px;
+	z-index: 1;
+}
+
+.headhesive--stick .log img{
+	/*width: 175px;
+	height: 85px;*/
+	opacity: 0;
+}
